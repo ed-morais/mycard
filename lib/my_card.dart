@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyCard extends StatelessWidget {
   const MyCard({super.key});
@@ -8,17 +9,52 @@ class MyCard extends StatelessWidget {
     return Scaffold(
         body: Container(
       width: double.infinity,
-      color: Colors.teal,
-      child:
-          Column(mainAxisAlignment: MainAxisAlignment.center, children: const [
-        CircleAvatar(
+      color: Colors.blue,
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        const CircleAvatar(
           backgroundImage: NetworkImage(
-              'https://s2.glbimg.com/gZrnzQkY70EZ2ZP0zwB689bUAak=/0x0:5184x3456/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/9/e/EYKMBXR72tNdkUAgmZzQ/azul-caneta.jpg'),
-          backgroundColor: Colors.amber,
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCd4QED50IAiKpDAEV-WdGvmYe_awTrXhXnA&usqp=CAU'),
           radius: 100,
         ),
-        Text('Linha 1'),
-        Text('Linha 1'),
+        Text(
+          'Blue Pen',
+          style: GoogleFonts.pacifico(
+            color: Colors.white,
+            fontSize: 32,
+          ),
+        ),
+        const Text(
+          'Vontade de beber veneno',
+          style: TextStyle(color: Colors.white),
+        ),
+        const Divider(
+          color: Colors.grey,
+          indent: 100.0,
+          endIndent: 100.0,
+          height: 20,
+        ),
+        Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(7))),
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          child: Row(children: const [
+            Icon(
+              Icons.phone,
+              color: Colors.blue,
+              size: 12,
+            ),
+            SizedBox(
+              width: 30.0,
+            ),
+            Text(
+              '49028922',
+              style: TextStyle(fontSize: 16),
+            )
+          ]),
+        )
       ]),
     ));
   }
